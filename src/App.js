@@ -1,24 +1,25 @@
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss';
+import {useState, useEffect} from 'react';
 
-function App() {
+const App = () => {
+  const [places, setPlaces] = useState([])
+//1. on component load/mount lets make a call to our api and show some data on the page
+  useEffect(()=> {
+    fetch('http://localhost:8080').then((res)=> {
+      return res.json()
+  }).then(res =>{
+    const apiplaces = res;
+    setPlaces(apiplaces);
+      console.log("here is the data");
+      console.log(res);
+    })
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className="App">
+
+<section className={styles.place}>{places.map(place => <div>country:{place.country}, flighttime: {place.flighttime}, capital:{place.capital}, sights:{place.sights},image:<img src={place.image} alt={place.country}/></div>)}</section>
+   </div>
   );
 }
 

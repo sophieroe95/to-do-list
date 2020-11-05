@@ -1,0 +1,15 @@
+.place {
+  color: blue;
+  display: flex;
+  flex-direction: column;
+}
+.place div {
+  color: blue;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.place img {
+  height: 400px;
+  width: 400px;
+}
