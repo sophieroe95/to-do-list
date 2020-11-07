@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-// import "./App.css";
+import styles from "./App.module.scss";
+
 const App = () => {
   // Store our data/collections here for us to show
   const [data, setData] = useState([]); 
@@ -63,17 +64,17 @@ const App = () => {
       })
     }
   return (
-    <div className="App">
-      <h1>Nology Team....</h1>
+    <div className={styles.App}>
+      <h1>To Do List....</h1>
       {/* We'll use this later once we have some information in our database
           to show on the page...... */}  
-      {data.map(data =>(<p>{data.name} <button onClick={() => handleDelete(data)}>Delete</button></p>))}
-      <form>
-        <label>Team member name</label>
+      {data.map(data =>(<p>{data.name} <button onClick={() => handleDelete(data)}>Done!</button></p>))}
+      <form className={styles.form}>
+        <label>To do:</label>
         {/* We need to keep track of this textbox so we know what to send */}
         <input type="text" onChange={(e) => setInput(e.target.value)}/>
         {/* ON CLICK - we need to send some information to the API */}
-        <button onClick={handleSubmit}>Create</button>
+        <button onClick={handleSubmit}>Add</button>
       </form>
     </div>
   );

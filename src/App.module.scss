@@ -1,17 +1,13 @@
-.place{
-  color: blue;
+.App {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 
-  div{
-    color: blue;
+  .form {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-  }
-
-  img{
-    height: 400px;
-    width: 400px;
+    justify-content: space-evenly;
+    height: 30vh;
   }
 }
