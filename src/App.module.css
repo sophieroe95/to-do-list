@@ -1,15 +1,26 @@
-.place {
-  color: blue;
+.page {
+  width: 100%;
+  height: auto;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
+  background-color: rgba(80, 120, 253, 0.993);
 }
-.place div {
+.page button {
   color: blue;
-  display: flex;
-  flex-direction: column;
+  background-color: white;
+  outline: none;
+  border: 1px solid blue;
+  border-radius: 50%;
   padding: 10px;
 }
-.place img {
-  height: 400px;
-  width: 400px;
+.page .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50vh;
+  width: 70vw;
+  padding: 1% 2%;
 }

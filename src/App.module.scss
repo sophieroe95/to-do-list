@@ -1,13 +1,29 @@
-.App {
+.page {
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
+  background-color: rgba(80, 120, 253, 0.993);
+
+  button {
+    color: blue;
+    background-color: white;
+    outline: none;
+    border: 1px solid blue;
+    border-radius: 50%;;
+    padding: 10px;
+  }
 
   .form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 30vh;
+    align-items: center;
+    height: 50vh;
+    width: 70vw;
+    padding: 1% 2%;
+
   }
 }
