@@ -40,7 +40,7 @@ const App = () => {
       // Data goes in the body
       body: JSON.stringify({ "country": country, "sights": sights, })
     }
-    fetch('https://node-api-sr.herokuapp.com/', fetchOptions)
+    fetch('https://node-api-sr.herokuapp.com/create', fetchOptions)
       .then(res => res.json())
       .then(res => {
         console.log("YAY WE GOT OUR RESPONSE BACK....")
@@ -58,7 +58,7 @@ const App = () => {
       body: JSON.stringify(doc)
     }
     // const fetchOptions = { method: 'DELETE'}
-    fetch('https://node-api-sr.herokuapp.com/', fetchOptions)
+    fetch('https://node-api-sr.herokuapp.com/delete', fetchOptions)
       .then(() => {
         console.log("sucessfully deleted" + doc.name)
         handleFetch();
