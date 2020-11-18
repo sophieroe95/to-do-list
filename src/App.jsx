@@ -15,7 +15,7 @@ const App = () => {
   }, []);
 
   const handleFetch = () => {
-    fetch('http://localhost:8081').then((res) => {
+    fetch('https://node-api-sr.herokuapp.com/').then((res) => {
       return res.json()
     }).then(res => {
       setData(res)
@@ -40,7 +40,7 @@ const App = () => {
       // Data goes in the body
       body: JSON.stringify({ "country": country, "sights": sights, })
     }
-    fetch('http://localhost:8081/create', fetchOptions)
+    fetch('https://node-api-sr.herokuapp.com/', fetchOptions)
       .then(res => res.json())
       .then(res => {
         console.log("YAY WE GOT OUR RESPONSE BACK....")
@@ -58,7 +58,7 @@ const App = () => {
       body: JSON.stringify(doc)
     }
     // const fetchOptions = { method: 'DELETE'}
-    fetch('http://localhost:8081/delete', fetchOptions)
+    fetch('https://node-api-sr.herokuapp.com/', fetchOptions)
       .then(() => {
         console.log("sucessfully deleted" + doc.name)
         handleFetch();
